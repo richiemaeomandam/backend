@@ -87,7 +87,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://richiemaeomandam.github.io",  # GitHub Pages live site
 ]
 # Optional: allow all methods/headers (you can remove this later)
-CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOW_CREDENTIALS = True
 
 
