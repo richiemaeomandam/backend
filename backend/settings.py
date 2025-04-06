@@ -86,6 +86,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # for local development
     "https://richiemaeomandam.github.io",  # GitHub Pages live site
 ]
+# Optional: allow all methods/headers (you can remove this later)
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_CREDENTIALS = True
+
+
 
 # ✅ CSRF trusted domains (optional, for forms or cookies)
 CSRF_TRUSTED_ORIGINS = [
