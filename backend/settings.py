@@ -134,7 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # For local React dev
-    "https://muripagss.github.io",  # For GitHub Pages deployment
+    "https://richiemaeomandam.github.io",  # For GitHub Pages deployment
 ]
 
 # If needed, you can use this for debugging (remove it later in production)
@@ -142,5 +142,5 @@ CORS_ALLOWED_ORIGINS = [
 
 # Optional but good to include for CSRF protection with trusted domains
 CSRF_TRUSTED_ORIGINS = [
-    "https://muripagss.github.io",
+    "https://richiemaeomandam.github.io",
 ]
