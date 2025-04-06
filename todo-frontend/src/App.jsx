@@ -6,6 +6,7 @@ function App() {
   const [newTask, setNewTask] = useState("");
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
+  const [filter, setFilter] = useState("all"); // State for task filter
   const API_URL = "https://backend-1-fvoi.onrender.com/api/tasks/";
 
   const fetchTasks = async () => {
@@ -111,6 +112,13 @@ function App() {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
+  // Filter tasks based on the selected filter
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "completed") return task.completed;
+    if (filter === "pending") return !task.completed;
+    return true; // "all" case
+  });
+
   return (
     <div
       className="App"
@@ -136,11 +144,18 @@ function App() {
       />
       <button onClick={addTask}>Add</button>
 
+      {/* Filter Buttons */}
+      <div style={{ margin: "20px 0" }}>
+        <button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>All</button>
+        <button className={filter === "completed" ? "active" : ""} onClick={() => setFilter("completed")}>Completed</button>
+        <button className={filter === "pending" ? "active" : ""} onClick={() => setFilter("pending")}>Pending</button>
+      </div>
+
       {loading ? (
         <p>Loading...</p>
       ) : (
         <ul>
-          {tasks.map((task, index) => (
+          {filteredTasks.map((task, index) => (
             <li key={task.id} style={{ marginTop: "10px", display: "flex", alignItems: "center" }}>
               <input
                 type="checkbox"
