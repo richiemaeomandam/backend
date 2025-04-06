@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://backend-1-fvoi.onrender.com",
+        target: "http://127.0.0.1:9000",
         
         changeOrigin: true,
         secure: false,
